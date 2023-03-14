@@ -13,6 +13,10 @@ function fillShape(index) {
 
         draw();
         checkForWin();
+        checkForDraw();
+        if (gameOver) {
+            showEndScreen();
+        }
         toggleActivePlayer();
     }
 }
@@ -51,12 +55,6 @@ function checkForWin() {
     checkForWinInRows();
     checkForWinInColumns();
     checkForWinInDiagonals();
-    if (gameOver) {
-        setTimeout(() => {
-            document.getElementById('game-over').classList.remove('d-none');
-            document.getElementById('restart-btn').classList.remove('d-none');
-        }, 250);
-    }
 }
 
 
@@ -142,6 +140,22 @@ function lineWins(line, shape) {
         }
     }
     return (shapeInLine == line.length) ? true : false;
+}
+
+
+function checkForDraw() {
+    if (!gameOver && fields.length == 9 && !fields.includes(undefined)) {
+        console.log('UNENTSCHIEDEN');
+        gameOver = true;
+    }
+}
+
+
+function showEndScreen() {
+    setTimeout(() => {
+        document.getElementById('game-over').classList.remove('d-none');
+        document.getElementById('restart-btn').classList.remove('d-none');
+    }, 250);
 }
 
 
