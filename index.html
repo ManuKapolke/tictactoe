@@ -13,6 +13,14 @@
 
 <body>
 
+    <img id="game-over" src="./img/game-over.png" class="game-over d-none">
+    <button id="restart-btn" class="restart-btn d-none" onclick="restart()">RESTART</button>
+
+    <div class="player-panel">
+        <div id="player-1"><img src="./img/cross.png">Player 1</div>
+        <div id="player-2" class="player-inactive"><img src="./img/circle.png">Player 2</div>
+    </div>
+
     <table>
         <tr>
             <td onclick="fillShape(0)">
@@ -59,6 +67,18 @@
             </td>
         </tr>
     </table>
+
+    <div id="line-r0" class="win-line" style="top: 377px;"></div>
+    <div id="line-r1" class="win-line" style="top: 512px;"></div>
+    <div id="line-r2" class="win-line" style="top: 645px;"></div>
+    <div id="line-c0" class="win-line" style="top: 512px; left: 222px; transform: rotate(90deg) scaleX(0);"></div>
+    <div id="line-c1" class="win-line" style="top: 512px; left: 357px; transform: rotate(90deg) scaleX(0);"></div>
+    <div id="line-c2" class="win-line" style="top: 512px; left: 490px; transform: rotate(90deg) scaleX(0);"></div>
+    <div id="line-d0" class="win-line"
+        style="top: 508px; left: 274px; transform: rotate(45deg) scaleX(0); width: 526px;"></div>
+    <div id="line-d1" class="win-line"
+        style="top: 508px; left: 280px; transform: rotate(-45deg) scaleX(0); width: 526px;"></div>
+
 </body>
 
 </html>
